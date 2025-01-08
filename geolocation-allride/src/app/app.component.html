@@ -1,0 +1,13 @@
+<!-- Input dirección y botón buscar-->
+<div class="input-container">
+  <input type="text" [(ngModel)]="address" placeholder="Dirección" />
+  <button (click)="sendLocation(address)">Enviar</button>
+</div>
+
+<!-- Mapa con marcadores -->
+<div style="height: 500px;">
+  <google-map [height]="'100%'" [width]="'100%'" [center]="{ lat: santiagoLat, lng: santiagoLng }" [zoom]="12">
+    <map-marker *ngFor="let marker of markers" [position]="marker"></map-marker>
+  </google-map>
+
+</div>
