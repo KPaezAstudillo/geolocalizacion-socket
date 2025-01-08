@@ -35,6 +35,7 @@ export class AppComponent implements OnInit {
     });
   }
 
+  // enviar coordenadas de la dirección ingresada al socket
   sendLocation(address: string): void {
     console.log('Enviando dirección:', address);
     this.getCoordinatesFromAddress(address).then((coords) => {
@@ -44,6 +45,7 @@ export class AppComponent implements OnInit {
     });
   }
 
+  // transformar dirección ingresada en coordenadas 
   async getCoordinatesFromAddress(address: string): Promise<{ lat: number; lng: number } | null> {
     const geocoder = new google.maps.Geocoder();
     return new Promise((resolve, reject) => {
